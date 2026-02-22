@@ -1,0 +1,15 @@
+@use './styles/theme';
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 20%, #0b1220, #0a0f1a 55%, #080c16);
+  color: theme.$text;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  min-height: 100vh;
+}

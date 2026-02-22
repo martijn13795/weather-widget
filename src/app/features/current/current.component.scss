@@ -1,0 +1,54 @@
+@use '../../../styles/theme.scss' as *;
+
+.card {
+  @include card();
+}
+
+.card__main {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.temp {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.temp img {
+  width: 72px;
+  height: 72px;
+}
+
+.label {
+  margin: 0;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+}
+
+h2 {
+  margin: 0.1rem 0;
+  font-size: 2.4rem;
+}
+
+.desc {
+  margin: 0;
+  color: $text;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
+  gap: 0.4rem 1rem;
+  color: $text;
+}
+
+@media (max-width: 600px) {
+  .meta {
+    grid-template-columns: 1fr;
+  }
+}

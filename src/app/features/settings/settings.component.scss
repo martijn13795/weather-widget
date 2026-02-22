@@ -1,0 +1,23 @@
+@use '../../../styles/theme.scss' as *;
+
+.settings {
+  display: inline-flex;
+  gap: 0.5rem;
+  background: $surface;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid $border-strong;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+input[type='radio'] {
+  accent-color: $accent;
+  cursor: pointer;
+}

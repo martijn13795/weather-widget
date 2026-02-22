@@ -1,0 +1,32 @@
+@use '../../../styles/theme.scss' as *;
+
+.search {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+input {
+  flex: 1 1 220px;
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid $border-strong;
+  background: $surface;
+  color: $text;
+}
+
+button {
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid $border-strong;
+  @include primary-button;
+}
+
+button.ghost {
+  @include ghost-button;
+  padding: 0.65rem 0.9rem;
+}
+
+.sr-only {
+  @include sr-only;
+}

@@ -1,12 +1,15 @@
 {
   "name": "mp-weather-widget",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --watch=false --coverage",
+    "lint": "ng lint",
+    "format": "prettier --write .",
+    "check": "prettier --write . && ng lint && ng test --watch=false --coverage"
   },
   "prettier": {
     "printWidth": 100,
@@ -23,21 +26,32 @@
   "private": true,
   "packageManager": "npm@11.8.0",
   "dependencies": {
-    "@angular/common": "^21.1.0",
-    "@angular/compiler": "^21.1.0",
-    "@angular/core": "^21.1.0",
-    "@angular/forms": "^21.1.0",
-    "@angular/platform-browser": "^21.1.0",
-    "@angular/router": "^21.1.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "@angular/common": "^21.1.5",
+    "@angular/compiler": "^21.1.5",
+    "@angular/core": "^21.1.5",
+    "@angular/forms": "^21.1.5",
+    "@angular/platform-browser": "^21.1.5",
+    "@angular/router": "^21.1.5",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
+    "@angular-eslint/builder": "^21.2.0",
+    "@angular-eslint/eslint-plugin": "^21.2.0",
+    "@angular-eslint/eslint-plugin-template": "^21.2.0",
+    "@angular-eslint/template-parser": "^21.2.0",
     "@angular/build": "^21.1.4",
     "@angular/cli": "^21.1.4",
-    "@angular/compiler-cli": "^21.1.0",
-    "jsdom": "^27.1.0",
-    "typescript": "~5.9.2",
-    "vitest": "^4.0.8"
+    "@angular/compiler-cli": "^21.1.5",
+    "@types/jasmine": "^5.1.8",
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "@typescript-eslint/parser": "^8.56.0",
+    "@vitest/coverage-v8": "^4.0.18",
+    "eslint": "^9.39.3",
+    "jasmine-core": "^5.4.0",
+    "jsdom": "^28.1.0",
+    "prettier": "^3.4.1",
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.18"
   }
 }
