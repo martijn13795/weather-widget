@@ -9,6 +9,7 @@ Angular weather widget that fetches current conditions plus 3-hourly and daily f
 ## Prerequisites
 
 - Node.js 18+
+- Angular CLI 21
 - OpenWeather API key in `src/environments/environment.ts` (`apiKey`)
 
 ## Install
