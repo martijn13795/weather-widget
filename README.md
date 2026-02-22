@@ -1,6 +1,6 @@
 # MP weather widget
 
-A standalone Angular 21 weather widget that fetches current conditions plus 3-hourly and daily forecasts from OpenWeather, with unit toggle, geolocation, and accessibility-friendly UI.
+Angular weather widget that fetches current conditions plus 3-hourly and daily forecasts from OpenWeather, with unit toggle, geolocation, and accessibility-friendly UI.
 
 ## Prerequisites
 - Node.js 18+
