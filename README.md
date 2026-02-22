@@ -2,6 +2,9 @@
 
 Angular weather widget that fetches current conditions plus 3-hourly and daily forecasts from OpenWeather, with unit toggle, geolocation, and accessibility-friendly UI.
 
+## Documentation
+- See `docs/` (requirements, user stories and solution design) created for this project and referenced during implementation.
+
 ## Prerequisites
 - Node.js 18+
 - OpenWeather API key in `src/environments/environment.ts` (`apiKey`)
