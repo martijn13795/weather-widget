@@ -57,6 +57,6 @@ describe('GeolocationService', () => {
   it('throws when geolocation is unavailable', async () => {
     (globalThis as { navigator: Navigator }).navigator = {} as Navigator;
     const service = new GeolocationService();
-    expect(service.getCurrentPosition()).rejects.toThrow('Geolocation unavailable');
+    await expect(service.getCurrentPosition()).rejects.toThrow('Geolocation unavailable');
   });
 });

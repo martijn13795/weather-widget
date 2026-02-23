@@ -6,30 +6,7 @@ import { Units } from '../../core/weather.models';
   selector: 'app-settings',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div class="settings" role="group" aria-label="Unit settings">
-      <label class="toggle">
-        <input
-          type="radio"
-          name="units"
-          value="metric"
-          [checked]="units === 'metric'"
-          (change)="unitsChange.emit('metric')"
-        />
-        °C
-      </label>
-      <label class="toggle">
-        <input
-          type="radio"
-          name="units"
-          value="imperial"
-          [checked]="units === 'imperial'"
-          (change)="unitsChange.emit('imperial')"
-        />
-        °F
-      </label>
-    </div>
-  `,
+  templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
 })
 export class SettingsComponent {
