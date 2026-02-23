@@ -20,7 +20,7 @@ class WeatherStoreStub {
     hourly: [],
     daily: [],
     units: 'metric',
-    locationLabel: 'Groningen',
+    locationLabel: 'Province of Groningen, NL',
     loading: false,
     error: undefined,
     lastRefreshed: new Date('2024-01-01T10:00:00Z'),
@@ -54,7 +54,7 @@ describe('WidgetComponent', () => {
 
   it('renders the location label', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Groningen');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Province of Groningen, NL');
   });
 
   it('shows error alert when error is present', () => {

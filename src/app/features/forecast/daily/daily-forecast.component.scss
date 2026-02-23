@@ -1,0 +1,66 @@
+@use '../../../../styles/theme.scss' as *;
+
+:host {
+  display: block;
+}
+
+.card {
+  @include card();
+}
+
+h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.daily {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.day {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  border-radius: 10px;
+  background: $surface-2;
+  border: 1px solid $border;
+}
+
+.day__temps {
+  display: flex;
+  gap: 0.4rem;
+  font-weight: 700;
+}
+
+.max {
+  color: $text;
+}
+
+.min {
+  color: $text-muted;
+}
+
+.day__icon {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.day__icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.date {
+  margin: 0;
+  color: $text;
+}
+
+.muted {
+  color: $text-muted;
+  font-size: 0.9rem;
+}

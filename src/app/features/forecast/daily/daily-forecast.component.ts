@@ -7,6 +7,7 @@ import { DailyForecast } from '../../../core/weather.models';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './daily-forecast.component.html',
+  styleUrls: ['./daily-forecast.component.scss'],
 })
 export class DailyForecastComponent {
   readonly days = input<DailyForecast[]>([]);

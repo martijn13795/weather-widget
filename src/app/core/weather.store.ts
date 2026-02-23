@@ -75,7 +75,13 @@ export class WeatherStore implements OnDestroy {
 
     if (!trimmed) return;
 
-    this.state.update((s) => ({ ...s, loading: true, error: undefined, locationLabel: trimmed }));
+    const currentLabel = this.state().locationLabel;
+    this.state.update((s) => ({
+      ...s,
+      loading: true,
+      error: undefined,
+      locationLabel: currentLabel,
+    }));
 
     forkJoin([
       this.api.getCurrentByCity(trimmed, this.state().units),
@@ -99,16 +105,16 @@ export class WeatherStore implements OnDestroy {
   async loadByGeolocation(): Promise<void> {
     try {
       const coords = await this.geolocation.getCurrentPosition();
-      const label = `${coords.latitude.toFixed(2)}, ${coords.longitude.toFixed(2)}`;
+      const currentLabel = this.state().locationLabel;
 
       this.lastQuery = {
         type: 'coords',
-        value: label,
-        label,
+        value: currentLabel,
+        label: currentLabel,
         coords: { lat: coords.latitude, lon: coords.longitude },
       };
 
-      this.state.update((s) => ({ ...s, loading: true, error: undefined, locationLabel: label }));
+      this.state.update((s) => ({ ...s, loading: true, error: undefined }));
 
       forkJoin([
         this.api.getCurrentByCoords(coords.latitude, coords.longitude, this.state().units),
@@ -124,8 +130,15 @@ export class WeatherStore implements OnDestroy {
           if (!data) return;
 
           const [current, forecast] = data;
+          const resolvedLabel = `${forecast.city?.name ?? currentLabel}, ${forecast.city?.country ?? ''}`;
+          this.lastQuery = {
+            type: 'coords',
+            value: resolvedLabel,
+            label: resolvedLabel,
+            coords: { lat: coords.latitude, lon: coords.longitude },
+          };
 
-          this.setStateFromApis(current, forecast, label);
+          this.setStateFromApis(current, forecast, resolvedLabel);
         });
     } catch (err) {
       this.state.update((s) => ({ ...s, error: this.describeError(err), loading: false }));
@@ -212,7 +225,14 @@ export class WeatherStore implements OnDestroy {
       .subscribe((data) => {
         if (!data) return;
         const [current, forecast] = data;
-        this.setStateFromApis(current, forecast, label);
+        const resolvedLabel = `${forecast.city?.name ?? label}, ${forecast.city?.country ?? ''}`;
+        this.lastQuery = {
+          type: 'coords',
+          value: resolvedLabel,
+          label: resolvedLabel,
+          coords: { lat, lon },
+        };
+        this.setStateFromApis(current, forecast, resolvedLabel);
       });
   }
 

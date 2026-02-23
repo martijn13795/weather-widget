@@ -7,6 +7,7 @@ import { ForecastPeriod } from '../../../core/weather.models';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './hourly-forecast.component.html',
+  styleUrls: ['./hourly-forecast.component.scss'],
 })
 export class HourlyForecastComponent {
   readonly periods = input<ForecastPeriod[]>([]);

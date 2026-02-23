@@ -1,0 +1,45 @@
+@use '../../../../styles/theme.scss' as *;
+
+:host {
+  display: block;
+}
+
+.card {
+  @include card();
+}
+
+h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.hourly {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.slot {
+  @include card($bg: $surface-2, $radius: 12px, $pad: 0.75rem);
+  text-align: center;
+}
+
+.slot img {
+  width: 52px;
+  height: 52px;
+}
+
+.time {
+  margin: 0;
+  color: $text-muted;
+  font-weight: 600;
+}
+
+.temp {
+  margin: 0.2rem 0;
+  font-size: 1.25rem;
+}
+
+.desc {
+  margin: 0;
+  color: $text;
+}
