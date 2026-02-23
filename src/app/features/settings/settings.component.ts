@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Units } from '../../core/weather.models';
 
 @Component({
@@ -10,6 +10,6 @@ import { Units } from '../../core/weather.models';
   styleUrls: ['./settings.component.scss'],
 })
 export class SettingsComponent {
-  @Input({ required: true }) units!: Units;
-  @Output() unitsChange = new EventEmitter<Units>();
+  readonly units = input.required<Units>();
+  readonly unitsChange = output<Units>();
 }

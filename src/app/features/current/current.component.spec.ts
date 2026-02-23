@@ -24,7 +24,7 @@ describe('CurrentComponent', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(CurrentComponent);
-    fixture.componentInstance.current = mockCurrent;
+    fixture.componentRef.setInput('current', mockCurrent);
     fixture.detectChanges();
   });
 
@@ -43,8 +43,8 @@ describe('CurrentComponent', () => {
 
   it('uses imperial units when selected', () => {
     const imperialFixture = TestBed.createComponent(CurrentComponent);
-    imperialFixture.componentInstance.current = mockCurrent;
-    imperialFixture.componentInstance.units = 'imperial';
+    imperialFixture.componentRef.setInput('current', mockCurrent);
+    imperialFixture.componentRef.setInput('units', 'imperial');
     imperialFixture.detectChanges();
 
     const compiled = imperialFixture.nativeElement as HTMLElement;

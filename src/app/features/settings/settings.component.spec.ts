@@ -10,7 +10,7 @@ describe('SettingsComponent', () => {
     await TestBed.configureTestingModule({ imports: [SettingsComponent] }).compileComponents();
     fixture = TestBed.createComponent(SettingsComponent);
     component = fixture.componentInstance;
-    component.units = 'metric';
+    fixture.componentRef.setInput('units', 'metric');
     fixture.detectChanges();
   });
 

@@ -1,7 +1,7 @@
 <section class="card" aria-label="Forecast">
   <h3>Next hours</h3>
   <div class="hourly" role="list">
-    @for (period of hourly; track $index) {
+    @for (period of hourly(); track $index) {
       <div class="slot" role="listitem">
         <p class="time">{{ period.time | date: 'shortTime' }}</p>
         <img [src]="period.iconCode" [alt]="period.description" />
@@ -15,7 +15,7 @@
 <section class="card" aria-label="Daily forecast">
   <h3>Next days</h3>
   <div class="daily" role="list">
-    @for (day of daily; track $index) {
+    @for (day of daily(); track $index) {
       <div class="day" role="listitem">
         <div class="day__label">
           <p class="date">{{ day.date | date: 'EEE' }}</p>

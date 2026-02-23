@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,10 +10,10 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-  @Input() loading = false;
-  @Input() geolocationAvailable = false;
-  @Output() citySearch = new EventEmitter<string>();
-  @Output() useGeolocation = new EventEmitter<void>();
+  readonly loading = input(false);
+  readonly geolocationAvailable = input(false);
+  readonly citySearch = output<string>();
+  readonly useGeolocation = output<void>();
 
   city = '';
 

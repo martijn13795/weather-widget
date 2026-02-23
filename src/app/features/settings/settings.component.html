@@ -4,7 +4,7 @@
       type="radio"
       name="units"
       value="metric"
-      [checked]="units === 'metric'"
+      [checked]="units() === 'metric'"
       (change)="unitsChange.emit('metric')"
     />
     °C
@@ -14,7 +14,7 @@
       type="radio"
       name="units"
       value="imperial"
-      [checked]="units === 'imperial'"
+      [checked]="units() === 'imperial'"
       (change)="unitsChange.emit('imperial')"
     />
     °F

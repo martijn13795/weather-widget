@@ -37,8 +37,8 @@ describe('ForecastComponent', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(ForecastComponent);
-    fixture.componentInstance.hourly = sampleHourly;
-    fixture.componentInstance.daily = sampleDaily;
+    fixture.componentRef.setInput('hourly', sampleHourly);
+    fixture.componentRef.setInput('daily', sampleDaily);
     fixture.detectChanges();
   });
 

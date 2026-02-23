@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { DailyForecast, ForecastPeriod } from '../../core/weather.models';
 
 @Component({
@@ -10,6 +10,6 @@ import { DailyForecast, ForecastPeriod } from '../../core/weather.models';
   styleUrls: ['./forecast.component.scss'],
 })
 export class ForecastComponent {
-  @Input() hourly: ForecastPeriod[] = [];
-  @Input() daily: DailyForecast[] = [];
+  readonly hourly = input<ForecastPeriod[]>([]);
+  readonly daily = input<DailyForecast[]>([]);
 }

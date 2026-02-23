@@ -6,15 +6,15 @@
     type="text"
     [(ngModel)]="city"
     placeholder="Search city (e.g. Emmen)"
-    [disabled]="loading"
+    [disabled]="loading()"
     required
   />
-  <button type="submit" [disabled]="loading">Search</button>
+  <button type="submit" [disabled]="loading()">Search</button>
   <button
     type="button"
     class="ghost"
     (click)="useGeolocation.emit()"
-    [disabled]="!geolocationAvailable || loading"
+    [disabled]="!geolocationAvailable() || loading()"
   >
     Use my location
   </button>
