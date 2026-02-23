@@ -4,7 +4,8 @@ import { catchError, forkJoin, of } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { GeolocationService } from './geolocation.service';
 import { iconForCode } from './icon-map';
-import { CurrentResponse, ForecastResponse, WeatherApiService } from './weather-api.service';
+import { WeatherApiService } from './weather-api.service';
+import { CurrentResponse, ForecastResponse } from './weather-api.models';
 import {
   CurrentConditions,
   DailyForecast,

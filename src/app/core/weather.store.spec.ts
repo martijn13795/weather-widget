@@ -4,7 +4,8 @@ import { of, throwError } from 'rxjs';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { environment } from '../../environments/environment';
 import { GeolocationService } from './geolocation.service';
-import { CurrentResponse, ForecastResponse, WeatherApiService } from './weather-api.service';
+import { WeatherApiService } from './weather-api.service';
+import { CurrentResponse, ForecastResponse } from './weather-api.models';
 import { WeatherStore } from './weather.store';
 import { WeatherState } from './weather.models';
 
