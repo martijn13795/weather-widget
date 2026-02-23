@@ -1,0 +1,13 @@
+<section class="card" aria-label="Forecast">
+  <h3>Next hours</h3>
+  <div class="hourly" role="list">
+    @for (period of periods(); track $index) {
+      <div class="slot" role="listitem">
+        <p class="time">{{ period.time | date: 'shortTime' }}</p>
+        <img [src]="period.iconCode" [alt]="period.description" />
+        <p class="temp">{{ period.temperature | number: '1.0-0' }}°</p>
+        <p class="desc">{{ period.description }}</p>
+      </div>
+    }
+  </div>
+</section>
