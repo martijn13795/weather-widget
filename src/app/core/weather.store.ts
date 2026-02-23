@@ -243,7 +243,7 @@ export class WeatherStore implements OnDestroy {
       temperature: raw?.main?.temp ?? 0,
       feelsLike: raw?.main?.feels_like ?? 0,
       description: raw?.weather?.[0]?.description ?? '',
-      iconCode: iconForCode(raw?.weather?.[0]?.icon ?? environment.defaultIconCode),
+      iconCode: iconForCode(raw?.weather?.[0]?.icon),
       humidity: raw?.main?.humidity ?? 0,
       windSpeed: raw?.wind?.speed ?? 0,
       timestamp: new Date(raw?.dt * 1000),
@@ -257,7 +257,7 @@ export class WeatherStore implements OnDestroy {
       time: new Date(entry.dt * 1000),
       temperature: entry.main?.temp ?? 0,
       description: entry.weather?.[0]?.description ?? '',
-      iconCode: iconForCode(entry.weather?.[0]?.icon ?? environment.defaultIconCode),
+      iconCode: iconForCode(entry.weather?.[0]?.icon),
     }));
   }
 
@@ -293,7 +293,7 @@ export class WeatherStore implements OnDestroy {
           minTemp,
           maxTemp,
           description: mid.weather?.[0]?.description ?? '',
-          iconCode: iconForCode(mid.weather?.[0]?.icon ?? environment.defaultIconCode),
+          iconCode: iconForCode(mid.weather?.[0]?.icon),
         } as DailyForecast;
       })
       .filter((d): d is DailyForecast => d !== null);

@@ -1,3 +1,5 @@
+import { environment } from '../../environments/environment';
+
 const codeToIcon: Record<string, string> = {
   '01d': 'Sun.svg',
   '01n': 'Moon.svg',
@@ -19,4 +21,8 @@ const codeToIcon: Record<string, string> = {
   '50n': 'Cloud-Fog.svg',
 };
 
-export const iconForCode = (code: string): string => `/icons/${codeToIcon[code] ?? 'Cloud.svg'}`;
+export const iconForCode = (code?: string): string => {
+  const resolved = code ?? environment.defaultIconCode;
+
+  return `/icons/${codeToIcon[resolved] ?? codeToIcon[environment.defaultIconCode]}`;
+};
